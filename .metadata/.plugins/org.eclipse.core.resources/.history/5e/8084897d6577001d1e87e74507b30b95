@@ -1,0 +1,56 @@
+package com.ioex;
+
+import java.io.*;
+
+public class DataInputStreamEx {
+
+	public static void main(String[] args) {
+
+		DataInputStream dis = null;// 1차원 스트림
+		// DataOutputStream : 기본 자료형 타입입 그대로 스트림을 통해서 저장할 있다.
+
+		// 2차원 스트림
+		FileInputStream fis = null;
+
+		try {
+
+			// 객체 생성
+			fis = new FileInputStream("c:/aa/data.txt");
+			dis = new DataInputStream(fis);
+			
+			//기본 자료형
+			// hwp 파일형식이 않맞아서 안나온다.
+			// 읽어 들일뗴는 반드시 저장한 순서대로 읽어야함
+			int i = dis.readInt();
+			double d = dis.readDouble();
+			String s = dis.readUTF();
+			// 특정 데이터 타입으로 저장된다.
+			
+			System.out.println("i 값: "+i);
+			System.out.println("d 값 :"+d);
+			System.out.println("s 값 :"+s);
+			
+			
+		} catch (FileNotFoundException fe) {
+			fe.printStackTrace();
+
+		} catch (IOException ie) {
+			ie.printStackTrace();
+		} finally {
+			try {
+				if (fis != null)fis.close();
+			} catch (IOException e) {
+				// TODO: handle exception
+			}
+
+			try {
+				if (dis != null)dis.close();
+			} catch (IOException e) {
+				// TODO: handle exception
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package study;
+
+public class Person {// Person 클래스를 생성
+
+	public static void main(String[] args) { // void main 
+		
+		Person p = new Person();
+		
+		
+	}
+
+}

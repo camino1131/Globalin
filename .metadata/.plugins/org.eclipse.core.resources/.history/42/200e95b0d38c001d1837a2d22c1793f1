@@ -1,0 +1,71 @@
+package homework;
+
+import java.awt.*;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Calculator extends Frame implements ActionListener{
+	JPanel jpButton, jpResult;
+	
+	
+	private Button[] bt = new Button[22];
+	private Panel[] pp = new Panel[22];
+	private Color[] cc = { Color.red, Color.green, Color.blue, Color.yellow };
+	
+	
+	JLabel jlbResult1, jlbResult2;
+	private CardLayout card = new CardLayout();
+	private Panel pptop;
+	private String[] str = {" <-","CE","C"
+			,"/","7", "8", 
+			"9", "4", "5", 
+			"6", "1", "2",
+			"3", "#", "0",
+			"00",".", "*",
+			"-","+","=" };
+	
+
+	public Calculator() {
+
+		super("Calculator");
+		getContentPane().setLayout(new BorderLayout());
+		//레이블 시작
+		jpResult = new JPanel(new GridLayout(2,1));
+		jpResult.setBackground(Color.WHITE);
+		jlbResult1 = new JLabel("",JLabel.RIGHT);
+		jlbResult2 = new JLabel("0",JLabel.RIGHT);
+		jlbReuslt2.setFort(new Font("굴림",Font.BOLD,20));
+		
+		jpResult.add(jlbResult1);
+		jpResult.add(jlbResult2);
+		//레이블 끝
+		
+		jpButto= new JPanel(new GridLayout(5, 4, 5, 5));
+		
+		
+		
+		
+		// 레이아웃 설정
+		setLayout(new GridLayout(4, 3, 5, 5));
+		
+		for (int i = 0; i < bt.length; i++) {
+			
+			bt[i] = new Button(str[i]);
+			bt[i].setFont(new Font("고딕", Font.BOLD, 30));
+			add(bt[i]);
+			
+			setSize(300, 200);
+			setVisible(true); //true = 보인 //false = 안보임
+			WinEvent ww = new WinEvent();
+			addWindowListener(ww);
+		}
+	}
+
+	
+	
+	public static void main(String[] args) {
+		new Calculator();
+	}
+
+}

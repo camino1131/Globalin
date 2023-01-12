@@ -1,0 +1,27 @@
+package homework;
+
+import java.awt.*;
+
+
+public class Calculator2 extends Frame{
+	
+	//생성자의 호출 시점 : 객체를 생성할 때 호출됨
+	//생성자의 조건(특징) : 클래스 명과 같아야 한다. 반환형이 없다.
+	//생성자 : Constructor
+	public Calculator2() {
+		System.out.println("2");
+		
+	}
+	
+
+	//1)
+	public static void main(String[] args) {
+		
+		System.out.println("1번");
+		
+		//2)Calculator2 객체를 생성한다.(new 키워드
+		Calculator2 cc = new Calculator2(); //그릇 = new 본체()
+		System.out.println("3");
+	}
+
+}

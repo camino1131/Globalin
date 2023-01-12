@@ -1,0 +1,27 @@
+package com.ioex;
+
+import java.io.*;
+
+public class FileEx03 {
+
+	public static void main(String[] args) throws IOException {
+		// 파일 생성
+		File f1 = new File("c:/aa/newFile.txt");
+
+		if (f1.exists()) {
+			System.out.println("파일 이름 :" + f1.getName());
+		} else {
+
+			try {
+				if (f1.createNewFile()) {
+					System.out.println("새로운 파일을 만들었습니다.");
+				}
+			} catch (IOException ii) {
+				ii.printStackTrace();
+			}
+
+		}
+
+	}
+
+}

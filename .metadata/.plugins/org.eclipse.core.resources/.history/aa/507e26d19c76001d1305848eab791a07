@@ -1,0 +1,18 @@
+package com.ioex;
+
+
+import java.io.*;
+//import java.io.File; 이 파일도 사용이 된다. 
+public class FileEx01 {
+
+	public static void main(String[] args) {
+		
+		File file = new File("c:\\퀴즈 2.txt");
+		System.out.println("파일이지 여부 : "+file.isFile());
+		
+		
+		
+
+	}
+
+}

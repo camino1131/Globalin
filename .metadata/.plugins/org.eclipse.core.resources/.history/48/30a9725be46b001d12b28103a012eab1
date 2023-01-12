@@ -1,0 +1,15 @@
+package Study;
+
+public class Pratice {
+
+	public static void main(String[] args) {
+		
+	char a,b,c,d,e;
+	
+	a='A';
+	System.out.printf("%c \t",a);
+	System.out.printf("%d \n",(int)a);	
+			
+	}
+
+}

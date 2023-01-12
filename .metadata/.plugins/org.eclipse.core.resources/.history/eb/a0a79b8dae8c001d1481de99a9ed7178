@@ -1,0 +1,44 @@
+package homework;
+
+import java.awt.*;
+
+public class Calculator extends Frame {
+
+	private Button[] bt = new Button[12];
+	private Panel[] pp = new Panel[12];
+	private Color[] cc = { Color.red, Color.green, Color.blue, Color.yellow };
+	
+	
+	
+	private CardLayout card = new CardLayout();
+	private Panel pptop;
+	private String[] str = {" <-","CE","C","/","7", "8", "9", "4", "5", "6", "1", "2", "3", "#", "0", "*" };
+	
+
+	public Calculator() {
+
+		super("Calculator");
+
+		// 레이아웃 설정
+		setLayout(new GridLayout(4, 3, 5, 5));
+
+		for (int i = 0; i < bt.length; i++) {
+
+			bt[i] = new Button(str[i]);
+			bt[i].setFont(new Font("궁서체", Font.BOLD, 30));
+			add(bt[i]);
+
+			setSize(300, 200);
+			setVisible(true); //true = 보인 //false = 안보임
+			WinEvent ww = new WinEvent();
+			addWindowListener(ww);
+		}
+	}
+
+	
+	
+	public static void main(String[] args) {
+		new Calculator();
+	}
+
+}

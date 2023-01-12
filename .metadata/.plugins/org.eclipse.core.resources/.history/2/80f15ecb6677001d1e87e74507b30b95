@@ -1,0 +1,36 @@
+package com.ioex;
+
+import java.io.*;
+
+//버퍼는 임시 기억이며  엔터를 누르면 입력이 간다. 다음에 비어진다. 
+public class FileWriteEx {
+
+	public static void main(String[] args) {
+
+		FileWriter writer = null;
+
+		try {
+
+			writer = new FileWriter("c:/aa/fw.txt");
+
+			String str = "학교 종이 깨졌다 엿을 사먹자!!!!!";
+
+			writer.write(str);
+
+			writer.flush();
+
+		} catch (FileNotFoundException fe) {
+			fe.printStackTrace();
+		} catch (IOException ie) {
+			ie.printStackTrace();
+		} finally {
+			try {
+				if (writer != null)
+					writer.close();
+			} catch (IOException ie) {
+
+			}
+
+		}
+	}
+}

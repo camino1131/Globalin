@@ -1,0 +1,20 @@
+package Study;
+
+import java.io.*; 
+
+public class Practice12_1 {
+
+	public static void main(String[] args) throws Exception{
+		
+	
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+		System.out.print("정수 입력 :" );
+		int num1 = Integer.parseInt(br.readLine());
+		
+		String value = (num1>0)?"양수":(num1==0)? "영":"음수";
+		
+		System.out.println(num1 + "==>"+value);
+		
+	}
+}				

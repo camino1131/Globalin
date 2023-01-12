@@ -1,0 +1,37 @@
+package com.hscore;
+public class ScoreMain {
+	public static void main(String[] args) throws Exception {
+		char ch;
+		Score score = new ScoreImpI();
+		while (true) {
+			do {
+				System.out.print("1.追加 2.修整 3.削除 4.全体を見る 5.学番検索 6.名前検索 7.終了 :");
+				ch = (char) System.in.read();
+				System.in.skip(2);
+			} while (ch < '1' || ch > '7');
+			switch (ch) {
+			case '1':
+				score.insert();
+				break;
+			case '2':
+				score.update();
+				break;
+			case '3':
+				score.delete();
+				break;
+			case '4':
+				score.listAll();
+				break;
+			case '5':
+				score.searchHak();
+				break;
+			case '6':
+				score.searchName();
+				break;
+			case '7':
+				System.out.println("プログラムを終了します。\n");
+				System.exit(0);
+			}
+		}
+	}
+}

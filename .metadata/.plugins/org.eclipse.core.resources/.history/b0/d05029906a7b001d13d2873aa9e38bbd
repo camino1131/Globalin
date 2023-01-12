@@ -1,0 +1,24 @@
+package Study;
+
+import java.util.*;
+
+public class Practice12_1 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+	
+		int i,j;
+		i=2;
+		while(i<=9) {
+			j=1;
+			while(j<=9) {
+				System.out.printf("%3d*%3d=%3d");
+			}
+		}
+	
+	
+	
+	
+	}
+}		

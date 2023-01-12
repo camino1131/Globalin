@@ -1,0 +1,140 @@
+package com.multi;
+
+import java.io.*;
+import java.net.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+
+public class MultiChatClient implements ActionListener, Runnable {
+	
+	private String ip; // 로그인/ 로그아웃
+	private String id; // 서버 ip
+	private Socket scoket;
+	//입출력 스트림 선언
+	private BufferedReader inMsg = null;
+	private PrintWriter outMsg = null;
+	
+	// 로그인 패널 
+	private JPanel loginPanel;
+	private JButton loginButton;
+	private JLabel label1;
+	private JTextField idInput;
+	
+	//로그아웃 패널
+	private JPanel logoutPanel;
+	private JLabel label2;
+	private JButton logoutButton;
+	
+	//메시지 입력 패널
+	private JPanel msgPanel;
+	private JTextField msgInput;
+	
+	//종료버튼
+	private JButton exitButton;
+	
+	private JFrame jframe;
+	
+	//채팅 내용출력창
+	
+	private JTextArea msgOut;
+	
+	//카드 레이아웃
+	private Container tab;
+	private CardLayout clayout;
+	private Thread thread;
+	
+	boolean status;
+	
+
+	public MultiChatClient(String ip) {
+	this.ip=ip;
+	
+	loginPanel = new JPanel();
+	
+	loginPanel.setLayout(new BorderLayout());
+	idInput = new JTextField(15);
+	loginButton = new JButton("로그인");
+	label1 = new JLabel("대화명");
+	
+	loginPanel.add(label1, BorderLayout.WEST);
+	loginPanel.add(idInput, BorderLayout.CENTER);
+	loginPanel.add(loginButton,BorderLayout.EAST);
+	
+	logoutPanel = new JPanel();
+	logoutPanel.setLayout(new BorderLayout());
+	label2 = new JLabel();
+	logoutButton = new JButton("로그아웃");
+	
+	logoutPanel.add(label2,BorderLayout.CENTER);
+	logoutPanel.add(logoutButton,BorderLayout.EAST);
+	
+	msgPanel = new JPanel();
+	msgPanel.setLayout(new BorderLayout());
+	msgInput = new JTextField(30);
+	
+	exitButton = new JButton("종료");
+	msgPanel.add(msgInput, BorderLayout.CENTER);
+	msgPanel.add(exitButton, BorderLayout.EAST);
+	
+	
+	//로그인/로그아웃 패널을 선택하기 위한 카드레이아웃 패널 구성
+	tab = new JPanel();
+	clayout = new CardLayout();
+	tab.setLayout(clayout);
+	tab.add(loginPanel,"logout");
+	tab.add(logoutPanel,"logout");
+	
+	//메인 프레임 구성
+	jframe = new JFrame(" ::멀티챗::");
+	msgOut = new JTextArea("", 10 ,30);
+	msgOut.setEditable(false);
+	
+	JScrollPane jsp = new JScrollPane(msgOut, 
+			JScrollPane. VERTICAL_SCROLLBAR_ALWAYS, 
+			JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	
+	jframe.add(tab, BorderLayout.NORTH);
+	jframe.add(jsp, BorderLayout.CENTER);
+	jframe.add(msgPanel, BorderLayout.SOUTH);
+	
+	//로그인 패널을 먼저 표시
+	clayout.show(tab, "login");
+	jframe.pack();
+	//프레임 크기 조정 불가
+	jframe.setResizable(false);
+	jframe.setVisible(true);
+	
+	
+	
+	}
+	
+	public void connectServer() {
+	
+		
+	
+	
+	
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void main(String[] args) {
+		new MultiChatClient("127.0.0.1");
+	}
+	
+}
+
+
+

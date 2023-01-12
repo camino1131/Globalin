@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;objectprogramming.Car&apos; to &apos;Add&apos;&#x0D;&#x0A;- Original project: &apos;praticeEx02&apos;&#x0D;&#x0A;- Original element: &apos;objectprogramming.Car&apos;&#x0D;&#x0A;- Renamed element: &apos;objectprogramming.Add&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Car&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;objectprogramming{Car.java[Car" matchStrategy="1" name="Add" qualified="false" references="true" similarDeclarations="false" stamp="1670840855254" textual="false" version="1.0"/>
+</session>

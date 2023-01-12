@@ -1,0 +1,14 @@
+package com.ioex;
+
+import java.io.*;
+
+public class FileOutEx {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+	}
+
+}

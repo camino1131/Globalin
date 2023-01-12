@@ -1,0 +1,29 @@
+package com.mapex;
+
+import java.util.*;
+public class HashMapEx02 {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, String>map = new HashMap<>();
+
+		map.put("aaaa","1111" );
+		map.put("bbbb","2222" );
+		map.put("cccc","3333" );
+	
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			
+			System.out.println("id과 password 입력 : ");
+			String id = sc.next();
+			String pw = sc.next();
+			
+			System.out.println();
+		}
+	
+	
+	
+	}
+
+}

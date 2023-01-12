@@ -1,0 +1,13 @@
+public class HashMapEx02 {
+
+import java.util.*;
+	
+	public static void main(String[] args) {
+		
+		HashMap<String, String>map = new HashMap<>();
+		
+		
+			
+	}
+
+}

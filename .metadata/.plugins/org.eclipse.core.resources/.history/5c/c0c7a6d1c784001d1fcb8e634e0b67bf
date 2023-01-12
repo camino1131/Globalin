@@ -1,0 +1,44 @@
+package com.threadex;
+
+import java.sql.SQLException;
+
+public class SigleTread extends Thread{
+
+	public static void main(String[] args) {
+		
+		private int[]temp;
+		
+		public SingleThread(String threadname) {
+			
+			super(threadname);
+			temp =new int[10];
+			for(int start = 0; start<temp.length; start++) {
+				temp[start]=start;
+			}
+			
+		}
+		
+		@Override
+		public void run() {
+			
+			for(int start : temp) {
+				try {
+					sleep(1000);
+					
+				}catch(InterruptedException uu) {
+					uu.printStackTrace();
+				}
+				
+				System.out.printf("스레드 이름 : %s,",currentThread().getName());
+				System.out.printf("temp value : %d%n",start);
+			}
+		
+		}
+		public static void main(String[] args) {
+			
+		}
+		
+		
+	}
+
+}
